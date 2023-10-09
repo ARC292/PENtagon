@@ -1,0 +1,106 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+
+struct lin
+{
+ int data;
+ struct lin *next;
+
+
+};
+ struct lin *head=NULL;
+ struct lin *temb;
+ struct lin *prev;
+void push()
+{
+    int data1;
+
+    if(head==NULL)
+    {
+     printf("enter the value:");
+     scanf("%d",&data1);
+     temb=(struct lin*)malloc(sizeof(struct lin));
+     temb->data=data1;
+     temb->next=NULL;
+     head=temb;
+     prev=temb;
+    }
+    else
+    {
+     printf("enter the value:");
+     scanf("%d",&data1);
+     temb=(struct lin*)malloc(sizeof(struct lin));
+     temb->data=data1;
+     temb->next=NULL;
+     prev->next=temb;
+     prev=temb;
+    }
+}
+
+ void pop()
+ {
+  temb=head;
+  if(head==NULL)
+  {
+  printf("the list is empty\n");
+  }
+  else
+  {
+    head=temb->next;
+  }
+
+}
+
+
+
+void display()
+  {
+   if(head==NULL)
+   {
+    printf("the link list is empty\n");
+   }
+   else
+   {
+    struct lin *lol;
+    lol=head;
+    while(lol->next!=NULL)
+    {
+     printf("%d\n",lol->data);
+     lol=lol->next;
+
+    }
+    if(lol->next==NULL)
+     {
+     printf("%d",lol->data);
+     }
+   }
+  }
+
+
+
+
+
+int main()
+{
+  int ch;
+  clrscr();
+ while(1)
+ {
+  printf("\nmenu\n1.push\n2.pop\n3.display\n4.exit:enter your choice:");
+  scanf("%d",&ch);
+  switch(ch)
+  {
+   case 1:push();
+	  break;
+   case 2:pop();
+	  break;
+   case 3:display();
+	  break;
+   case 4:exit(1);
+	  break;
+   default:printf("invalid choice\nselect one from above");
+	   break;
+  }
+ }
+}
