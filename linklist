@@ -1,0 +1,188 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+
+struct lin
+{
+ int data;
+ struct lin *next;
+
+
+};
+ struct lin *head=NULL;
+ struct lin *temb;
+ struct lin *prev;
+
+  void insert()
+  {
+    int data1;
+
+    if(head==NULL)
+    {
+     printf("enter the value:");
+     scanf("%d",&data1);
+     temb=(struct lin*)malloc(sizeof(struct lin));
+     temb->data=data1;
+     temb->next=NULL;
+     head=temb;
+     prev=temb;
+    }
+    else
+    {
+     printf("enter the value:");
+     scanf("%d",&data1);
+     temb=(struct lin*)malloc(sizeof(struct lin));
+     temb->data=data1;
+     temb->next=NULL;
+     prev->next=temb;
+     prev=temb;
+    }
+  }
+
+  void deletepos()
+  {
+    int  c=0;
+    struct lin *temb1;
+    int pos;
+    printf("enter the position to insert\n");
+    scanf("%d",&pos);
+    temb=head;
+    while(temb!=NULL)
+    {
+     c=c+1;
+     if(c==pos-1)
+     {
+    	temb->next=NULL;
+	    break;
+     }
+    }
+    temb1=head;
+    while(temb1!=NULL)
+    {
+     if(c==pos+1)
+      {
+	temb->next=temb1;
+      }
+    }
+
+  }
+
+  void insertf()
+  {
+   int data1;
+   if(head!=NULL)
+   {
+     printf("enter the data to insert at first:\n");
+     scanf("%d",&data1);
+     temb=(struct lin*)malloc(sizeof(struct lin));
+     temb->data=data1;
+     temb->next=head;
+     head=temb;
+  }
+ }
+  void deletef()
+  {
+   if(head==NULL)
+   {
+    printf("the list is empty\n");
+   }
+   else
+   {
+    head=head->next;
+   }
+
+
+  }
+
+
+  void deletend()
+  {
+   struct lin *tok;
+
+   if(head==NULL)
+   {
+    printf("\nthe list is empty");
+   }
+   else
+   {
+      struct lin *del;
+
+      del=head;
+    if(del->next==NULL)
+    {
+     head=NULL;
+    }
+    else
+    {
+      while(del->next!=NULL)
+       {
+
+       tok=del;
+       del=del->next;
+       }
+    tok->next=NULL;
+    prev=tok;
+    }
+   }
+  }
+
+
+
+  void display()
+  {
+   if(head==NULL)
+   {
+    printf("the link list is empty\n");
+   }
+   else
+   {
+    struct lin *lol;
+    lol=head;
+    while(lol->next!=NULL)
+    {
+     printf("%d\n",lol->data);
+     lol=lol->next;
+
+    }
+    if(lol->next==NULL)
+     {
+     printf("%d",lol->data);
+     }
+   }
+  }
+
+
+
+
+
+int main()
+{
+  int ch;
+  clrscr();
+ while(1)
+ {
+  printf("\nmenu\n1.insert\n2.insert first\n4.display\n5.delete end\n6.deletef\n7.deletepos\n8.exit\nenter your choice:");
+  scanf("%d",&ch);
+  switch(ch)
+  {
+   case 1:insert();
+	  break;
+   case 2:insertf();
+	  break;
+   case 4:display();
+	  break;
+   case 5:deletend();
+	  break;
+
+   case 6:deletef();
+	  break;
+   case 7:deletepos();
+	  break;
+   case 8:exit(1);
+
+   default:printf("invalid choice\nselect one from above");
+	   break;
+  }
+ }
+}
+
