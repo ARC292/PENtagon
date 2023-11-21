@@ -1,0 +1,5 @@
+a=int(input("no1:"))
+b=int(input("no2:"))
+c=int(input("no3:"))
+s=max(a,b,c)      
+print(s)      

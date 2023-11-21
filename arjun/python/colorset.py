@@ -1,0 +1,5 @@
+col=input("enter the colors")
+col=set(col.split(","))
+co2=input("enter the colors")
+co2=set(co2.split(","))
+print(col-co2)

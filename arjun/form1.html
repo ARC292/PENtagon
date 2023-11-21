@@ -1,0 +1,103 @@
+<html>
+ <link type="text/css" rel="stylesheet" href="index.css" >
+  <head>
+ <center> <h3>LIST OF FRUITS</h3></center>
+   <style>
+     h3
+      {
+        color:violet;
+        alighn="center";
+    
+      }
+   </style>
+  
+  <script>
+      
+   function read()
+   { 
+   
+   
+     if(document.forms.fo.market.value=="")
+     {
+        window.alert("please enter the value");
+        document.forms.fo.market.focus();
+     }        
+   
+   
+       if(document.forms.fo.water.value=="")
+     {
+        window.alert("please enter the value");
+        document.forms.fo.water.focus();
+     }        
+     
+     
+      
+     
+        if(document.forms.fo.coco.value=="")
+     {
+        window.alert("please enter the value");
+        document.forms.fo.coco.focus();
+     }        
+     
+     
+      else
+      {  
+       var n1=document.getElementById("water").value;
+       var n2=document.getElementById("grapes").value;
+       var n3=document.getElementById("coco").value;
+        var n3=document.getElementById("market").value;
+       document.write("water lemon=  "+n1+"  grapes="+n2+"  coco="+n3);
+      }    
+   }
+   
+  </script>
+  </head>
+<body>
+ <form id="fo" action="" >
+ <center>
+ 
+  <table name="table1">
+  
+  
+   <tr id="tr1">
+     <th id="th1" style=padding:10px > fruit name</th>
+     <th style=padding:3px>number</th>  
+   </tr>
+  
+   
+    <tr id="tr2">
+     <td  id="dat1" align="center">market name</td>
+     <td align="center"> <input type="text" id="market"></td>
+   </tr>
+   
+
+   <tr id="tr3">
+     <td align="center">water melon</td>
+     <td align="center"> <input type="number" id="water"></td>
+   </tr>
+  
+   <tr id="tr4">
+     <td align="center">grapes</td>
+     <td align="center"> <input type="number" id="grapes"></td>
+   </tr>
+ 
+   <tr id="tr5">
+     <td align="center">coco</td>
+     <td align="center"> <input type="number" id="coco"></td>
+   </tr>
+   <tr id="tr6">
+     <td align="center">mango</td>
+     <td align="center"> <input type="number" id="mango" ></td>
+   </tr
+  <br>
+    </table>
+     <input type="reset"  value="CLEAR" name="CLEAR" ><br>
+    <input type="button" onclick="read()"  value="SUBMIT"  name="SUBMIT">
+    
+    <a href="ffirst.html"><input type="button"  value="GO" name="GO" ><br></a>
+    
+ </center>  
+  </forms>
+ 
+ </body>
+</html>
